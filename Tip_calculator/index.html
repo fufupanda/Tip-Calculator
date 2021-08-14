@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.0/css/all.css" crossorigin="anonymous">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+  <script src="./calc.js"></script>
+
+</head>
+
+<body class="bg-blue-300 md:375">
+  <div class="flex justify-center pt-32 font-mono text-2xl font-bold text-gray-500 header">
+    S P L I<br>
+    T T E R
+  </div>
+  <div class="flex items-center w-8/12 mx-64 mt-10 bg-white main h-96 rounded-xl">
+    <div class="w-1/2 calculator-side h-80 rounded-xl ml-9">
+      <span class="font-mono font-bold text-gray-400 ">Bill</span>
+      <div class="h-10 mt-2 bg-blue-100 rounded-lg input-box space-x-60">
+        <i class="p-3 fas fa-rupee-sign"></i>
+        <input class="text-right bg-transparent focus:outline-none" type="number" id="bill">
+        
+      </div>
+      <div class="mt-5 font-mono font-bold text-gray-400">
+        Select Tip %
+      </div>
+
+      <div class="flex flex-wrap space-y-3 buttons">
+        
+        <button class="flex items-center justify-center h-10 mt-3 text-xl font-medium text-white bg-green-800 rounded-lg cursor-pointer hover:bg-green-300 w-36" onclick="getItems(this.id)" id="b1" value="5">
+          5%
+        </button>
+        <button
+          class="flex items-center justify-center h-10 ml-2 text-xl font-medium text-white bg-green-800 rounded-lg cursor-pointer w-36 hover:bg-green-300" onclick="getItems(this.id)" id="b2" value="10">
+          10%
+        </button>
+        <button
+          class="flex items-center justify-center h-10 ml-2 text-xl font-medium text-white bg-green-800 rounded-lg cursor-pointer w-36 hover:bg-green-300v" onclick="getItems(this.id)" id="b3" value="15">
+          15%
+        </button>
+        <button
+          class="flex items-center justify-center h-10 text-xl font-medium text-white bg-green-800 rounded-lg cursor-pointer w-36 hover:bg-green-300" onclick="getItems(this.id)" id="b4" value="25">
+          25%
+        </button>
+        <button
+          class="flex items-center justify-center h-10 ml-2 text-xl font-medium text-white bg-green-800 rounded-lg cursor-pointer w-36 hover:bg-green-300" onclick="getItems(this.id)" id="b5" value="50">
+          50%
+        </button>
+        <button
+          class="flex items-center justify-center h-10 ml-2 text-xl font-medium text-gray-300 bg-blue-100 rounded-lg w-36 hover:bg-green-300">
+          <input class="text-right text-black placeholder-gray-400 bg-transparent mr-11 focus:outline-none w-36" onclick="getItems(this.id)" id="b6" type="number"
+            placeholder="Custom">
+        </button>
+      </div>
+
+      <div class="mt-5 font-mono font-bold text-gray-400">
+        Number of People
+      </div>
+      <div class="flex h-10 mt-2 bg-blue-100 rounded-lg space-x-60 input box">
+        <i class="p-3 fas fa-user"></i>
+        <input class="text-right bg-transparent focus:outline-none" type="number" min="1" id="people" placeholder="1">
+      </div>
+    </div>
+    <div class="w-1/2 bg-green-900 Result-side total h-80 rounded-xl ml-9 mr-9">
+      <div class="flex h-16 py-2 mt-12 space-x-60 pl-9 tip">
+        <div class="tip-text">
+        <span class="font-mono font-bold text-white">Tip Amount</span><br>
+        <span class="font-mono text-gray-400">/ person</span>
+        </div>
+        <div class="mr-2 text-4xl text-green-400 tip-amount">
+          ₹0.00
+        </div>
+      </div>
+
+      <div class="flex h-16 py-2 mt-8 space-x-64 pl-9 total">
+        <div class="total-text">
+        <span class="font-mono font-bold text-white">Total</span><br>
+        <span class="font-mono text-gray-400">/ person</span>
+        </div>
+        <div class="mr-2 text-4xl text-green-400 total-amount">
+          ₹0.00
+        </div>
+      </div>
+      
+      <button class="flex items-center justify-center h-12 mx-10 mt-12 font-mono bg-green-500 rounded-lg cursor-pointer w-96 hover:bg-green-300" onclick="reset()">
+        RESET
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>
